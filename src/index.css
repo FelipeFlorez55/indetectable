@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* App chrome only — Tailwind never styles what happens inside <canvas>.
+   See CLAUDE.md §6.1. */
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Let the canvas own all pointer gestures (no scroll/zoom hijack). */
+  touch-action: none;
+
+  /* Dark "forensic" theme. The whole UI uses light-on-dark colors, so the
+     surface must be dark or everything washes out. Subtle radial glows give
+     depth without distracting from the canvas. */
+  color: #e5e5e5;
+  background-color: #0a0a0b;
+  background-image:
+    radial-gradient(60rem 60rem at 15% -10%, rgba(16, 185, 129, 0.08), transparent 60%),
+    radial-gradient(50rem 50rem at 100% 0%, rgba(239, 68, 68, 0.06), transparent 55%),
+    radial-gradient(40rem 40rem at 50% 120%, rgba(120, 113, 108, 0.06), transparent 60%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Soft entrance used by the intro / verdict panels. */
+@keyframes inkfade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-inkfade {
+  animation: inkfade 0.4s ease-out both;
+}
+
+/* Slow pulse for the "scanning" magnifier. */
+@keyframes scanpulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+.animate-scanpulse {
+  animation: scanpulse 1.1s ease-in-out infinite;
+}

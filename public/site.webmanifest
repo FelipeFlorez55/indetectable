@@ -1,0 +1,13 @@
+{
+  "name": "Indetectable",
+  "short_name": "Indetectable",
+  "description": "A daily game: camouflage your stroke among the machine's. Can the detective catch you?",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" }
+  ],
+  "theme_color": "#0a0a0a",
+  "background_color": "#0a0a0a",
+  "display": "standalone"
+}
