@@ -28,3 +28,8 @@ pnpm-debug.log*
 # Env (no secrets in this repo by design — see CLAUDE.md §2)
 .env
 .env.*
+
+# Local deploy tooling — kept OUT of the public repo. No credentials (those live
+# in ~/.aws), but it carries infra identifiers (S3 bucket, CloudFront distribution
+# id, AWS profile) we don't want to publish.
+scripts/deploy.sh
