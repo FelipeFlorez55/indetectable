@@ -246,6 +246,17 @@ function Game() {
         )}
       </main>
 
+      <footer className="mt-auto pt-4 text-center">
+        <a
+          href="https://felipeflorez.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-mono text-[11px] text-neutral-600 transition-colors hover:text-emerald-400"
+        >
+          hecho por Felipe Flórez ↗
+        </a>
+      </footer>
+
       <StatsDialog open={statsOpen} onOpenChange={setStatsOpen} />
     </div>
   );
